@@ -16,7 +16,6 @@
 
 package org.bitcoinj.tools;
 
-import org.bitcoinj.core.*;
 import org.bitcoinj.params.MainNetParams;
 import org.bitcoinj.params.TestNet3Params;
 import org.bitcoinj.store.*;

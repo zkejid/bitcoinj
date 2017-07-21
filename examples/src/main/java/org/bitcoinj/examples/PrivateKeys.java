@@ -17,7 +17,6 @@
 
 package org.bitcoinj.examples;
 
-import org.bitcoinj.core.*;
 import org.bitcoinj.params.MainNetParams;
 import org.bitcoinj.store.MemoryBlockStore;
 import org.bitcoinj.wallet.Wallet;

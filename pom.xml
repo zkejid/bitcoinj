@@ -25,7 +25,7 @@
   <packaging>pom</packaging>
 
   <modules>
-    <module>core</module>
+    <module>core-parent</module>
     <module>examples</module>
     <module>tools</module>
     <module>wallettemplate</module>

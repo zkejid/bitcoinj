@@ -6,14 +6,14 @@ install: true # remove default
 script:
   - mvn -q clean install -Pno-network
   - jdk_switcher use openjdk7
-  - cd core
+  - cd core-parent/core
   - mvn -q clean package -Pno-network
 
 after_success:
-  - cd ../core
+  - cd ../core # looks like odd code: no need to switch to core? we are already there
   - mvn jacoco:report coveralls:report
 
-notifications:
-  irc:
-    channels: "irc.freenode.net#bitcoinj"
-    skip_join: true
+#notifications:
+#  irc:
+#    channels: "irc.freenode.net#bitcoinj"
+#    skip_join: true
