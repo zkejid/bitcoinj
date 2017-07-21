@@ -16,6 +16,10 @@
 
 package org.bitcoinj.examples;
 
+import org.bitcoinj.core.Address;
+import org.bitcoinj.core.Message;
+import org.bitcoinj.core.Peer;
+import org.bitcoinj.core.Transaction;
 import org.bitcoinj.core.listeners.PreMessageReceivedEventListener;
 import org.bitcoinj.kits.WalletAppKit;
 import org.bitcoinj.params.RegTestParams;
