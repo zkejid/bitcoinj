@@ -17,7 +17,6 @@
 
 package org.bitcoinj.core.peers.discovery;
 
-import org.bitcoinj.core.*;
 import org.bitcoinj.utils.*;
 
 import java.net.*;
@@ -41,7 +40,7 @@ public class DnsDiscovery extends MultiplexingDiscovery {
      *
      * @param netParams Network parameters to be used for port information.
      */
-    public DnsDiscovery(NetworkParameters netParams) {
+    public DnsDiscovery(NetworkDiscoveryParameters netParams) {
         this(netParams.getDnsSeeds(), netParams);
     }
 
@@ -51,11 +50,11 @@ public class DnsDiscovery extends MultiplexingDiscovery {
      * @param dnsSeeds Host names to be examined for seed addresses.
      * @param params Network parameters to be used for port information.
      */
-    public DnsDiscovery(String[] dnsSeeds, NetworkParameters params) {
+    public DnsDiscovery(String[] dnsSeeds, NetworkDiscoveryParameters params) {
         super(params, buildDiscoveries(params, dnsSeeds));
     }
 
-    private static List<PeerDiscovery> buildDiscoveries(NetworkParameters params, String[] seeds) {
+    private static List<PeerDiscovery> buildDiscoveries(NetworkDiscoveryParameters params, String[] seeds) {
         List<PeerDiscovery> discoveries = new ArrayList<>();
         if (seeds != null)
             for (String seed : seeds)
@@ -76,9 +75,9 @@ public class DnsDiscovery extends MultiplexingDiscovery {
     /** Implements discovery from a single DNS host. */
     public static class DnsSeedDiscovery implements PeerDiscovery {
         private final String hostname;
-        private final NetworkParameters params;
+        private final NetworkDiscoveryParameters params;
 
-        public DnsSeedDiscovery(NetworkParameters params, String hostname) {
+        public DnsSeedDiscovery(NetworkDiscoveryParameters params, String hostname) {
             this.hostname = hostname;
             this.params = params;
         }

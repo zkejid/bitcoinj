@@ -57,14 +57,14 @@ public class HttpDiscovery implements PeerDiscovery {
     }
 
     private final Details details;
-    private final NetworkParameters params;
+    private final NetworkDiscoveryParameters params;
     private final OkHttpClient client;
 
     /**
      * Constructs a discovery object that will read data from the given HTTP[S] URI and, if a public key is provided,
      * will check the signature using that key.
      */
-    public HttpDiscovery(NetworkParameters params, URI uri, @Nullable ECKey pubkey) {
+    public HttpDiscovery(NetworkDiscoveryParameters params, URI uri, @Nullable ECKey pubkey) {
         this(params, new Details(pubkey, uri));
     }
 
@@ -72,11 +72,11 @@ public class HttpDiscovery implements PeerDiscovery {
      * Constructs a discovery object that will read data from the given HTTP[S] URI and, if a public key is provided,
      * will check the signature using that key.
      */
-    public HttpDiscovery(NetworkParameters params, Details details) {
+    public HttpDiscovery(NetworkDiscoveryParameters params, Details details) {
         this(params, details, new OkHttpClient());
     }
 
-    public HttpDiscovery(NetworkParameters params, Details details,  OkHttpClient client) {
+    public HttpDiscovery(NetworkDiscoveryParameters params, Details details,  OkHttpClient client) {
         checkArgument(details.uri.getScheme().startsWith("http"));
         this.details = details;
         this.params = params;

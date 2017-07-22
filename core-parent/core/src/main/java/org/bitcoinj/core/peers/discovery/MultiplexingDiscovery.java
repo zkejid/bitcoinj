@@ -19,7 +19,6 @@ package org.bitcoinj.core.peers.discovery;
 
 import com.google.common.collect.Lists;
 
-import org.bitcoinj.core.NetworkParameters;
 import org.bitcoinj.core.VersionMessage;
 import org.bitcoinj.core.peers.discovery.DnsDiscovery.DnsSeedDiscovery;
 import org.bitcoinj.utils.*;
@@ -45,7 +44,7 @@ public class MultiplexingDiscovery implements PeerDiscovery {
     private static final Logger log = LoggerFactory.getLogger(MultiplexingDiscovery.class);
 
     protected final List<PeerDiscovery> seeds;
-    protected final NetworkParameters netParams;
+    protected final NetworkDiscoveryParameters netParams;
     private volatile ExecutorService vThreadPool;
 
     /**
@@ -54,7 +53,7 @@ public class MultiplexingDiscovery implements PeerDiscovery {
      * @param params Network to use.
      * @param services Required services as a bitmask, e.g. {@link VersionMessage#NODE_NETWORK}.
      */
-    public static MultiplexingDiscovery forServices(NetworkParameters params, long services) {
+    public static MultiplexingDiscovery forServices(NetworkDiscoveryParameters params, long services) {
         List<PeerDiscovery> discoveries = Lists.newArrayList();
         HttpDiscovery.Details[] httpSeeds = params.getHttpSeeds();
         if (httpSeeds != null) {
@@ -75,7 +74,7 @@ public class MultiplexingDiscovery implements PeerDiscovery {
     /**
      * Will query the given seeds in parallel before producing a merged response.
      */
-    public MultiplexingDiscovery(NetworkParameters params, List<PeerDiscovery> seeds) {
+    public MultiplexingDiscovery(NetworkDiscoveryParameters params, List<PeerDiscovery> seeds) {
         checkArgument(!seeds.isEmpty());
         this.netParams = params;
         this.seeds = seeds;

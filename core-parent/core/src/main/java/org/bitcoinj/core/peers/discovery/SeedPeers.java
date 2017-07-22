@@ -16,8 +16,6 @@
 
 package org.bitcoinj.core.peers.discovery;
 
-import org.bitcoinj.core.NetworkParameters;
-
 import javax.annotation.Nullable;
 import java.net.InetAddress;
 import java.net.InetSocketAddress;
@@ -30,7 +28,7 @@ import java.util.concurrent.TimeUnit;
  * to the network, in case IRC and DNS fail. The list comes from the Bitcoin C++ source code.
  */
 public class SeedPeers implements PeerDiscovery {
-    private NetworkParameters params;
+    private NetworkDiscoveryParameters params;
     private int[] seedAddrs;
     private int pnseedIndex;
 
@@ -39,7 +37,7 @@ public class SeedPeers implements PeerDiscovery {
      *
      * @param params Network parameters to be used for port information.
      */
-    public SeedPeers(NetworkParameters params) {
+    public SeedPeers(NetworkDiscoveryParameters params) {
         this(params.getAddrSeeds(), params);
     }
 
@@ -49,7 +47,7 @@ public class SeedPeers implements PeerDiscovery {
      * @param seedAddrs IP addresses for seed addresses.
      * @param params Network parameters to be used for port information.
      */
-    public SeedPeers(int[] seedAddrs, NetworkParameters params) {
+    public SeedPeers(int[] seedAddrs, NetworkDiscoveryParameters params) {
         this.seedAddrs = seedAddrs;
         this.params = params;
     }

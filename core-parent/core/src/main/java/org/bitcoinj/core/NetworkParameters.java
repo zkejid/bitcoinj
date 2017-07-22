@@ -42,7 +42,7 @@ import org.bitcoinj.utils.VersionTally;
  * intended for unit testing and local app development purposes. Although this class contains some aliases for
  * them, you are encouraged to call the static get() methods on each specific params class directly.</p>
  */
-public abstract class NetworkParameters {
+public abstract class NetworkParameters implements NetworkDiscoveryParameters{
     /**
      * The alert signing key originally owned by Satoshi, and now passed on to Gavin along with a few others.
      */
@@ -273,17 +273,17 @@ public abstract class NetworkParameters {
         return subsidyDecreaseBlockCount;
     }
 
-    /** Returns DNS names that when resolved, give IP addresses of active peers. */
+    /** {@inheritDoc} */
     public String[] getDnsSeeds() {
         return dnsSeeds;
     }
 
-    /** Returns IP address of active peers. */
+    /** {@inheritDoc} */
     public int[] getAddrSeeds() {
         return addrSeeds;
     }
 
-    /** Returns discovery objects for seeds implementing the Cartographer protocol. See {@link org.bitcoinj.core.peers.discovery.HttpDiscovery} for more info. */
+    /** {@inheritDoc} */
     public HttpDiscovery.Details[] getHttpSeeds() {
         return httpSeeds;
     }
@@ -303,7 +303,7 @@ public abstract class NetworkParameters {
         return genesisBlock;
     }
 
-    /** Default TCP port on which to connect to nodes. */
+    /** {@inheritDoc} */
     public int getPort() {
         return port;
     }
