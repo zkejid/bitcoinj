@@ -25,6 +25,7 @@ import com.google.common.primitives.*;
 import com.google.common.util.concurrent.*;
 import net.jcip.annotations.*;
 import org.bitcoinj.core.listeners.*;
+import org.bitcoinj.core.peers.ExponentialBackoff;
 import org.bitcoinj.net.*;
 import org.bitcoinj.net.discovery.*;
 import org.bitcoinj.script.*;
@@ -42,8 +43,6 @@ import java.net.*;
 import java.util.*;
 import java.util.concurrent.*;
 import java.util.concurrent.locks.*;
-
-import okhttp3.OkHttpClient;
 
 import static com.google.common.base.Preconditions.*;
 

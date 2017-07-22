@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.bitcoinj.utils;
+package org.bitcoinj.core.peers;
 
 import org.bitcoinj.core.Utils;
 
