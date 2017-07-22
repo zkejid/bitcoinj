@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.bitcoinj.net.discovery;
+package org.bitcoinj.core.peers.discovery;
 
 import org.bitcoinj.params.MainNetParams;
 import org.junit.Test;

@@ -15,14 +15,13 @@
  * limitations under the License.
  */
 
-package org.bitcoinj.net.discovery;
+package org.bitcoinj.core.peers.discovery;
 
 import com.google.common.collect.Lists;
 
 import org.bitcoinj.core.NetworkParameters;
 import org.bitcoinj.core.VersionMessage;
-import org.bitcoinj.net.discovery.HttpDiscovery;
-import org.bitcoinj.net.discovery.DnsDiscovery.DnsSeedDiscovery;
+import org.bitcoinj.core.peers.discovery.DnsDiscovery.DnsSeedDiscovery;
 import org.bitcoinj.utils.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

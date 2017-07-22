@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.bitcoinj.net.discovery;
+package org.bitcoinj.core.peers.discovery;
 
 import com.google.common.annotations.*;
 import com.google.protobuf.*;

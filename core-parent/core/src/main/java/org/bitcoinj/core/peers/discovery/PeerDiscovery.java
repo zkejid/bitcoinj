@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.bitcoinj.net.discovery;
+package org.bitcoinj.core.peers.discovery;
 
 import java.net.InetSocketAddress;
 import java.util.concurrent.TimeUnit;

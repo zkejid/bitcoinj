@@ -22,7 +22,7 @@ import com.google.common.collect.*;
 import com.google.common.net.*;
 import com.google.common.util.concurrent.*;
 import org.bitcoinj.core.listeners.*;
-import org.bitcoinj.net.discovery.*;
+import org.bitcoinj.core.peers.discovery.*;
 import org.bitcoinj.testing.*;
 import org.bitcoinj.utils.*;
 import org.bitcoinj.wallet.Wallet;

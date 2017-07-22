@@ -1,6 +1,6 @@
 /*
- * Copyright by the original author or authors.
- * 
+ * Copyright 2011 Google Inc.
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -14,7 +14,24 @@
  * limitations under the License.
  */
 
-/**
- * Classes that know how to discover peers in the P2P network using DNS, IRC or DNS via Tor (orchid).
- */
-package org.bitcoinj.net.discovery;
+package org.bitcoinj.core.peers.discovery;
+
+public class PeerDiscoveryException extends Exception {
+    private static final long serialVersionUID = -2863411151549391392L;
+
+    public PeerDiscoveryException() {
+        super();
+    }
+
+    public PeerDiscoveryException(String message) {
+        super(message);
+    }
+
+    public PeerDiscoveryException(Throwable arg0) {
+        super(arg0);
+    }
+
+    public PeerDiscoveryException(String message, Throwable arg0) {
+        super(message, arg0);
+    }
+}

@@ -21,7 +21,7 @@ import com.google.common.collect.*;
 import com.google.common.util.concurrent.*;
 import org.bitcoinj.core.listeners.*;
 import org.bitcoinj.core.*;
-import org.bitcoinj.net.discovery.*;
+import org.bitcoinj.core.peers.discovery.*;
 import org.bitcoinj.protocols.channels.*;
 import org.bitcoinj.store.*;
 import org.bitcoinj.wallet.*;

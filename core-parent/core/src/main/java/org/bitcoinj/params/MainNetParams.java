@@ -18,7 +18,7 @@
 package org.bitcoinj.params;
 
 import org.bitcoinj.core.*;
-import org.bitcoinj.net.discovery.*;
+import org.bitcoinj.core.peers.discovery.*;
 
 import java.net.*;
 
